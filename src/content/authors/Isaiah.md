@@ -1,7 +1,7 @@
 ---
 name: 'Isaiah'
 pronouns: 'he/him'
-avatar: '/public/2swiftpfp.jpg'
+avatar: '/2swiftpfp.jpg'
 bio: "ψ( ^ ‿ ^ )"
 
 #website: 'tbd'
