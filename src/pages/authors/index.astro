@@ -1,5 +1,6 @@
 ---
 import AuthorCard from '@/components/AuthorCard.astro'
+import Link from '@/components/Link.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import PageHead from '@/components/PageHead.astro'
 import Layout from '@/layouts/Layout.astro'
@@ -9,8 +10,8 @@ const authors = await getAllAuthors()
 ---
 
 <Layout>
-  <PageHead slot="head" title="Authors" />
-  <Breadcrumbs items={[{ label: 'Authors', icon: 'lucide:users' }]} />
+  <PageHead slot="head" title="Author" />
+  <Breadcrumbs items={[{ label: 'Author', icon: 'lucide:users' }]} />
   {
     authors.length > 0 ? (
       <ul class="flex flex-col gap-4">
@@ -24,4 +25,39 @@ const authors = await getAllAuthors()
       <p class="text-muted-foreground text-center">No authors found.</p>
     )
   }
+
+  <section>
+      <div class="flex flex-col space-y-1.5 p-6">
+        <h3 class="text-3xl leading-none font-medium">Meet the author - </h3>
+      </div>
+      <div class="p-6 pt-1">
+        <a>        
+          Hey! I'm Isaiah,            
+        </a><br><br>
+      
+        <p class="text-muted-foreground text-l">
+          I'm currently pursuing my bachelors in <a class="text-foreground"> Computer Science </a> at <a class="text-foreground">ASU</a> and researching at the 
+          <Link
+            href="https://rolston.lab.asu.edu/"
+            class="text-foreground"
+            external
+            underline>Rolston Lab
+            </Link>
+            .
+        </p>
+        <p class="text-muted-foreground text-l"> My research involves perovskite solar cells, and developing a machine learning model to optimize the parameters for a CsPb(Ix-Brx) cell.</p>
+        <pre>
+        </pre>   
+        <p class="text-muted-foreground text-l">My academic interests center around <a class="text-foreground">renewable energy</a>, and future <a class="text-foreground">battery technology</a>.</p>  
+        <pre>
+        </pre>
+        <p class="text-muted-foreground text-l">Outside of school, I like drawing, playing video games, guitar, skateboarding, and a couple other things... <span class="text-xs">(atleast I keep myself busy, right?)<span>. </p>  
+        <p class="text-foreground text-l">Despite all these other things, tech will always have a soft spot near my heart ♥.</p>
+        <pre>
+        </pre>
+        <p class="text-muted-foreground text-l">Anyways, take a look around and make yourself at home 🤗</p>  
+        <pre>
+        </pre> 
+      </div>
+  </section>
 </Layout>
