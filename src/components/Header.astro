@@ -6,6 +6,8 @@ import { NAV_LINKS, SITE } from '@/consts'
 import { Image } from 'astro:assets'
 import logo from '../../public/static/logo.svg'
 import bisonglogo from '../../public/static/bisonglogo.svg'
+import bisonwlogo from '../../public/static/bisonwlogo.svg'
+import bisonlogo from '../../public/static/bisonlogo.svg'
 ---
 
 <header transition:persist>
@@ -13,7 +15,8 @@ import bisonglogo from '../../public/static/bisonglogo.svg'
     class="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-3"
   >
     <Link href="/" class="flex shrink-0 items-center justify-center gap-3">
-      <Image src={bisonglogo} alt="Logo" class="size-5 sm:size-6" />
+
+      <img id="site-logo" src={bisonlogo} alt="Site Logo" class="size-5 sm:size-12" />
       <span class="hidden h-full text-lg font-medium min-[300px]:block"
         >{SITE.title}</span
       >
