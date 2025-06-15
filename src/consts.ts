@@ -19,11 +19,11 @@ export const NAV_LINKS: SocialLink[] = [
   {
     href: '/authors',
     label: 'author',
-  },
-  {
-    href: '/about',
-    label: 'about',
-  },
+  }
+  //{
+    //href: '/about',
+    //label: 'about',
+  //},
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
