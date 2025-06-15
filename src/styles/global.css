@@ -84,11 +84,11 @@
 }
 
 #site-logo {
-  content: url('/../../public/static/bisonlogo.svg');
+  content: url('/public/static/bisonlogo.svg');
 }
 
 [data-theme="dark"] #site-logo {
-  content: url('/../../public/static/bisonwlogo.svg');
+  content: url('/public/static/bisonwlogo.svg');
 }
 
 @layer base {
