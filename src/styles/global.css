@@ -83,6 +83,14 @@
   --ring: oklch(0.556 0 0);
 }
 
+#site-logo {
+  content: url('/public/static/bisonlogo.svg');
+}
+
+[data-theme="dark"] #site-logo {
+  content: url('/public/static/bisonwlogo.svg');
+}
+
 @layer base {
   *,
   ::after,
