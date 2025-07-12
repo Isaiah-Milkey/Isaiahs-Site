@@ -1,0 +1,125 @@
+---
+title: 'Making Perovskite Films'
+description: 'Reflections on my first hands-on experience with perovskite film processing at the Rolston Lab.'
+date: 2025-07-01
+tags: ['Research', 'Perovskite', 'NonProgramming']
+image: './banner.png'
+authors: ['isaiah']
+---
+
+import Callout from '@/components/Callout.astro'
+import { Icon } from 'astro-icon/components'
+
+# First Week at the Lab
+
+I’m writing this a while after actually having my first week, so it will be more of a summary looking back at what I’ve learned so far.
+
+# Making Thin films!
+
+For training, my mentor had me and another student make (CsFAPb)I samples using the techniques I will eventually have to use for my FURI project.
+
+---
+
+### Step 1: Cleaning
+
+First, we have to clean the glass slides in a mixture of soap, acetone, then IBA. We do this by dipping the slides in the solution—then shaking them by placing the beaker into an ultra-sonic cleaner for about 5–10 minutes (which sends sonar waves through the water to shake the beaker).
+
+<Callout variant="important">Only rub/rinse with toothbrush and DI water after using extern.</Callout>
+
+Once the slides have been cleaned with the solution, we clean the slides off with a nitrogen spray to dry them.
+
+After this, we place the slides (labeled-side-down) into the UV-Box to be once again dried and remove any further remains of soap or debris. (Also another 10–15 minutes)
+
+<Callout variant="tip">Plug in fume hood in the back.</Callout>
+
+---
+
+### Step 2: Processing the Films
+
+All of the following was completed in the glove box.
+
+<Callout variant="warning">Make sure to follow all lab protocols and any rules set by the lab when using the glove box.</Callout>
+
+#### 1. The Mixture
+
+In order to get the right amount of mL, we have to compute the mixture as such:
+
+**Recipe:** 5mL, 1.4M of Cs(0.2)FA(0.8)PbI₂
+
+<Callout title="Calculating moles" variant="example">
+  $$
+  n = 1.4\, \mathrm{mol/L} \times 5\, \mathrm{mL} \ (0.005\, \mathrm{L}) = 0.007\, \mathrm{mol} = 7\, \mathrm{mmol}
+  $$
+</Callout>
+
+| **Precursor** | **Ratio** | **Moles = 7mmol × Ratio** |
+| ------------- | ---------- | ------------------------- |
+| CsI           | 0.2        | 1.4 mmol                  |
+| FAI           | 0.8        | 5.6 mmol                  |
+| PbI₂          | 1.0        | 7.0 mmol                  |
+
+| **Compound** | **Molar Mass (g/mol)** | **Mass = moles × Molar Mass** |
+| ------------ | ---------------------- | ------------------------------ |
+| CsI          | 259.81                 | 363.73 mg                      |
+| FAI          | 171.97                 | 963.03 mg                      |
+| PbI₂         | 461.01                 | 3227.07 mg                     |
+
+We must also calculate the amount of solvent needed to mix these powders together:
+
+**Solvent Ratio:** 1(NMP) : 6.5(DMF)
+
+<Callout title="Solvent volumes" variant="example">
+  $$
+  \mathrm{NMP} = \frac{1}{7.5} \times 5000\, \mu L = 667\, \mu L
+  $$
+  $$
+  \mathrm{DMF} = \frac{6.5}{7.5} \times 5000\, \mu L = 4333\, \mu L
+  $$
+</Callout>
+
+<Callout variant="note">You can also derive these values from a molar mass ratio method:</Callout>
+
+<Callout title="Mass ratio equalities" variant="example">
+  $$
+  \frac{1}{259.81} = \frac{1.4}{363.734}
+  $$
+  $$
+  \frac{1}{171.97} = \frac{5.6}{963.032}
+  $$
+  $$
+  \frac{1}{461.01} = \frac{7}{3227.07}
+  $$
+</Callout>
+
+---
+
+#### 2. Mixing the Ink
+
+Measure out your materials neatly and carefully and add powders into a glass vial/container. Syringe the solvent(s) into the vial.
+
+Stir for a set time (15–20 mins) using a vortex mixer until powders completely dissolve and there are no major visible particles.
+
+<Callout variant="important">Add PVP **after** mixing the solvents.</Callout>
+
+---
+
+#### 3. Spin Coating and Annealing
+
+<Callout variant="warning">Make sure to follow all lab protocols and any rules set by the lab when using the spin coater and other instruments.</Callout>
+
+Preheat the hot plate to necessary temperature (125°C). Also preheat your solution before spin coating if necessary.
+
+1. Open the spin coater, and line the top cover and inner edges with tin foil or something to stop the ink from staining the machine.
+    - If you’re gas quenching, then open gas valves and pumps.
+    - Align nozzles above spin platform.
+
+2. Use tweezers to place a glass slide onto the platform, and turn on the spin coater vacuum so the sample doesn’t fall while spinning.
+    - Pipette 3–4 drops of solution onto the slide.
+
+3. Run the spin coater at recommended settings (ask mentor for specific speeds).
+    - If gas quenching, turn on valve to 50 psi during high speed for ~20s.
+
+4. Once done, transfer the covered sample to the hot plate, and cook for needed time (15 mins).
+    - During this part, you should see the slide go from a clear yellow to a reflective grey/black.
+
+5. Using tweezers, take the sample off the hotplate into a safe container.
