@@ -13,7 +13,6 @@ import ProjectCard from '@/components/ProjectCard.astro'
 import StackedSinWaves from "@/components/StackedSinWaves.jsx";
 import DoomFlame from "@/components/DoomFlame.jsx";
 
-
 const projects = await getPostsByAuthor('isaiah')
 const blog = await getPostsByAuthor('isaiah')
 const blog2 = await getRecentPosts(SITE.featuredPostCount)
@@ -21,14 +20,31 @@ const taggedPosts = await getPostsByTag('Project')
 ---
 
 <Layout>
-  
- <section>
+<section class="flex justify-center items-center py-10">
+  <div class="rounded-lg border w-full">
+    <div class="flex flex-col space-y-1.5 p-6 w-full">
+      <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        class="w-full h-auto rounded-xl shadow-lg"
+      >
+        <source src="/animations/bisonrun2.webm" type="video/webm" />
+        Your browser does not support WebM.
+      </video>
+    </div>
+  </div>
+</section>
+
+ <!-- <section> 
  <div class="rounded-lg border">
       <div class="flex flex-col space-y-1.5 p-6">
         <StackedSinWaves client:only/>      
       </div>
   </div>
 </section>
+-->
 
   <PageHead slot="head" title="Home" />
   <section>
