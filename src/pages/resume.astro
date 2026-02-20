@@ -1,0 +1,35 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PageHead from '@/components/PageHead.astro'
+import Link from '@/components/Link.astro'
+import { buttonVariants } from '@/components/ui/button'
+import {
+  education,
+  experience,
+  heroSummary,
+  skills,
+} from '@/data/resume'
+---
+
+<Layout>
+  <PageHead slot="head" title="Resume" />
+
+  <section class="rounded-lg border bg-muted p-6">
+    <div class="flex flex-col gap-1 text-sm uppercase tracking-wide text-muted-foreground">
+      <span>Resume</span>
+      <span class="text-xs">Last updated: 2/17/26</span>
+    </div>
+    <div class="mt-3">
+      <h1 class="text-3xl font-semibold">{heroSummary.headline}</h1>
+      <p class="mt-2 text-base text-muted-foreground">{heroSummary.description}</p>      
+    </div>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <Link
+        href="/static/IsaiahMilkey_Resume.pdf"
+        download
+        class={`${buttonVariants({ variant: 'outline' })} min-w-[220px] justify-center`}
+      >
+        {heroSummary.downloadLabel}
+      </Link>      
+    </div>
+  </section>

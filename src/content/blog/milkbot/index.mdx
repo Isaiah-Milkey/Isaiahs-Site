@@ -1,0 +1,115 @@
+---
+title: 'Milkbot: Building LLM Tools'
+description: 'An overview on making tools for a small-scale Language Model to increase QA accuracy.'
+date: 2025-12-06
+tags: ['Programming', 'Project', 'LLM']
+image: './banner.png'
+authors: ['isaiah']
+---
+
+# MilkBot - A Project Overview
+
+This post will go over my work involved in my final project for my NLP class I was taking.
+
+Take a look at the code here!  
+https://github.com/Isaiah-Milkey/MilkBot
+
+---
+
+## An Introduction
+
+Here’s how the project is setup:
+
+1. The class is given API access to an unknown, and small, Large Language Model.
+2. The professor releases a dataset of Question-Answer pairs which can be used for training/testing your framework.
+3. For each question, the LLM was restricted to 10 or less LLM API calls.
+4. Goal: Increase accuracy by creating/using different LLM tools (that don’t just look-up the answer).
+
+---
+
+## Pre-Programming
+
+I quickly learned that the LLM was not very smart.
+
+### Initial Performance
+
+| Category | Score |
+|----------|--------|
+| math | 5 / 10 |
+| coding | 3 / 10 |
+| future_prediction | 1 / 10 |
+| planning | 2 / 10 |
+| common_sense | 5 / 10 |
+| **Average** | **32%** |
+
+It performed average or worse across the board, and complicated prompts would increasingly decrease accuracy.
+
+In class we went over a broad range of topics to increase LLM accuracy. These ranged from prompt-based techniques like: chain of thought, or multi-path reasoning to actual tools like calculators and RAG.
+
+I also learned that each question was placed under a certain ‘category’. Depending on the category, the LLM would need to access different tools/knowledge to answer the question.
+
+After some digging into the usage, I learned that applying these into the program would actually be pretty easy. The code wouldn’t be clean enough for industry standard — but for a class project to explore increasing accuracy, my code would be more than enough.
+
+---
+
+## Methods and Experience
+
+My agent loop uses a simple LLM call to evaluate the question as one of these 5 categories or ‘other’. Depending on the choice, the loop runs the dedicated function according to the category.
+
+Each category has a combination of tools and methods used for that specific category. I used these categories to modularize my code, and mix and match tools/inference methods depending on the situation.
+
+I created a broad range of functions using techniques and strategies I learned in class and found online. Some of the inference-time methods were not used as they proved too inconsistent and inaccurate after testing.
+
+To test my bot, I would grade each function using batches of questions from that domain — and use the answer from that question to pass/fail the test.
+
+---
+
+## The Main Loop
+
+![milkbotflowchart.drawio (1).png](milkbotflowchart.drawio_(1).png)
+
+I’ll leave the definition of these functions to be found and defined on the Github page.
+
+However!
+
+I am proud to say that using this, I was able to increase accuracy from 32% to 60%!
+
+---
+
+## Results
+
+### Before Implementation
+
+| Category | Score |
+|----------|--------|
+| math | 5 / 10 |
+| coding | 3 / 10 |
+| future_prediction | 1 / 10 |
+| planning | 2 / 10 |
+| common_sense | 5 / 10 |
+| **Average** | **32%** |
+
+---
+
+### After Implementation
+
+| Category | Score |
+|----------|--------|
+| math | 7 / 10 |
+| coding | 7 / 10 |
+| future_prediction | 2 / 10 |
+| planning | 3 / 10 |
+| common_sense | 8 / 10 |
+| **Average** | **60%** |
+
+---
+
+## What I Learned
+
+I think the biggest thing I learned is the numerous ways to interact with LLMs.
+
+LLM’s allow for the ability to use prompts themselves as tools, rather than directly having to code something using external libraries, etc.
+
+With small LLMs specifically, creating avenues to where the LLM can reference TRUE information is the most important thing to focus on.
+
+The agent performed poorly on tasks like planning, because there is no easy representation or tool to evaluate planning as right or wrong. To do this, you would have to create a small program that interprets predicate logic — which I felt like was outside my scope of this project.
